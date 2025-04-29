@@ -12,6 +12,13 @@ const customData = [
     "cn": "请给我三个茄子 | Qǐng gěi wǒ sān gè qiézi",
     "kr": "가지 세 개 주세요 | gaji se gae juseyo",
     "es": "Por favor, deme tres berenjenas | por fa-vor de-me tres be-ren-je-nas"
+  },
+  {
+    "jp": "頭が痛いです",
+    "en": "I have a headache",
+    "cn": "我头疼 | Wǒ tóuténg",
+    "kr": "머리가 아파요 | meoriga apayo",
+    "es": "Me duele la cabeza | me due-le la ca-be-za"
   }
 ];
 
