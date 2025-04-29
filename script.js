@@ -201,3 +201,15 @@ document.getElementById('downloadCustomData').addEventListener('click', () => {
 
   URL.revokeObjectURL(url);
 });
+
+// テキストコピー機能
+function copyTemplateText() {
+  const templateOutput = document.getElementById('templateOutput');
+  const text = templateOutput.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('テキストをクリップボードにコピーしました');
+  }).catch(err => {
+    console.error('コピーに失敗しました:', err);
+    alert('コピーに失敗しました');
+  });
+}
