@@ -1,5 +1,4 @@
 let currentData = [];
-let customData = []; // カスタム文章用の配列
 let currentSceneTitle = "";
 let lastIndex = -1;
 let correctCount = 0; // ← わかった数カウント
@@ -16,6 +15,17 @@ const scoreDiv = document.getElementById('score'); // スコア表示用
 const newSentence = document.getElementById('newSentence');
 const submitButton = document.getElementById('submitButton');
 
+// 簡易翻訳関数（実際のプロジェクトでは外部APIを使用することを推奨）
+function translate(text) {
+  // ここでは簡単な例として、日本語の後ろに各言語の識別子を付けた形で返します
+  return {
+    en: text + " (in English)",
+    cn: text + " (in Chinese)|Pinyin",
+    kr: text + " (in Korean)|발음",
+    es: text + " (in Spanish)|プロヌンシアシオン"
+  };
+}
+
 // 送信ボタンのイベントリスナー
 submitButton.addEventListener('click', () => {
   const text = newSentence.value.trim();
@@ -24,14 +34,16 @@ submitButton.addEventListener('click', () => {
     return;
   }
 
-  // 選択されているシーンのデータ配列に追加
+  // 翻訳を実行
+  const translations = translate(text);
+  
   // カスタムデータに追加
   const newData = {
     jp: text,
-    en: "",
-    cn: "|",
-    kr: "|",
-    es: "|"
+    en: translations.en,
+    cn: translations.cn,
+    kr: translations.kr,
+    es: translations.es
   };
   customData.push(newData);
   
@@ -42,10 +54,10 @@ submitButton.addEventListener('click', () => {
   alert(`以下の形式で追加しました：
   {
     jp: "${text}",
-    en: "",
-    cn: "|",
-    kr: "|",
-    es: "|"
+    en: "${translations.en}",
+    cn: "${translations.cn}",
+    kr: "${translations.kr}",
+    es: "${translations.es}"
   }`);
 });
 
