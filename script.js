@@ -1,4 +1,5 @@
 let currentData = [];
+let customData = []; // カスタム文章用の配列
 let currentSceneTitle = "";
 let lastIndex = -1;
 let correctCount = 0; // ← わかった数カウント
@@ -12,6 +13,35 @@ const topButton = document.getElementById('topButton');
 const sceneSelector = document.getElementById('sceneSelector');
 const startButton = document.getElementById('startButton');
 const scoreDiv = document.getElementById('score'); // スコア表示用
+const newSentence = document.getElementById('newSentence');
+const submitButton = document.getElementById('submitButton');
+
+// 送信ボタンのイベントリスナー
+submitButton.addEventListener('click', () => {
+  const text = newSentence.value.trim();
+  if (!text) {
+    alert('文章を入力してください');
+    return;
+  }
+
+  // 選択されているシーンのデータ配列に追加
+  // カスタムデータに追加
+  const newData = {
+    jp: text,
+    en: "",
+    cn: "|",
+    kr: "|",
+    es: "|"
+  };
+  customData.push(newData);
+  
+  // 入力欄をクリア
+  newSentence.value = '';
+
+  // 入力欄をクリア
+  newSentence.value = '';
+  alert('文章を追加しました');
+});
 
 // スタートボタン押したらシーン開始
 startButton.addEventListener('click', () => {
@@ -36,6 +66,9 @@ function startScene(scene) {
   } else if (scene === 'daily') {
     currentData = dailyData;
     currentSceneTitle = "🗣️ 日常会話";
+  } else if (scene === 'custom') {
+    currentData = customData;
+    currentSceneTitle = "📝 自由入力";
   }
   lastIndex = -1;
   correctCount = 0;

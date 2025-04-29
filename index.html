@@ -19,14 +19,24 @@
         <option value="hotel">🏨 ホテル</option>
         <option value="restaurant">🍽 レストラン</option>
         <option value="daily">🗣️ 日常会話</option>
+        <option value="custom">📝 自由入力</option>
       </select>      
   
     <!-- スタートボタン -->
     <button id="startButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">
       スタート
     </button>
+
+    <!-- 文章追加エリア -->
+    <div class="mt-8">
+      <h2 class="text-xl font-bold mb-4">文章を追加する</h2>
+      <textarea id="newSentence" class="w-full border border-gray-300 rounded p-2 mb-4" rows="3" placeholder="日本語の文章を入力してください"></textarea>
+      <button id="submitButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">
+        送信
+      </button>
+    </div>
   </div>
-  
+
   
 <!-- コンテンツ表示 -->
 <div id="content" class="hidden bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
