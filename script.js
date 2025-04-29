@@ -25,7 +25,9 @@ function translate(text) {
 }
 
 // 送信ボタンのイベントリスナー
-document.getElementById('submitButton').addEventListener('click', () => {
+const submitButton = document.getElementById('submitButton');
+if (submitButton) {
+  submitButton.addEventListener('click', () => {
   const jp = document.getElementById('newSentence').value.trim();
   if (!jp) return alert("日本語を入力してください");
 
@@ -57,7 +59,8 @@ document.getElementById('submitButton').addEventListener('click', () => {
   alert("入力を追加しました！翻訳テンプレートを下に表示しました。");
 
   document.getElementById('newSentence').value = "";
-});
+  });
+}
 
 // スタートボタン押したらシーン開始
 startButton.addEventListener('click', () => {
