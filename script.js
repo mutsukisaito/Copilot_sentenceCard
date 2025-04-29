@@ -27,38 +27,24 @@ function translate(text) {
 }
 
 // 送信ボタンのイベントリスナー
-submitButton.addEventListener('click', () => {
-  const text = newSentence.value.trim();
-  if (!text) {
-    alert('文章を入力してください');
-    return;
-  }
+document.getElementById('submitButton').addEventListener('click', () => {
+  const jp = document.getElementById('newSentence').value.trim();
+  if (!jp) return alert("日本語を入力してください");
 
-  // 翻訳を実行
-  const translations = translate(text);
-  
-  // カスタムデータに追加
-  const newData = {
-    jp: text,
-    en: translations.en,
-    cn: translations.cn,
-    kr: translations.kr,
-    es: translations.es
+  // 仮のテンプレート（翻訳は後でChatGPTに頼む）
+  const newEntry = {
+    jp: jp,
+    en: "",
+    cn: " | ",
+    kr: " | ",
+    es: " | "
   };
-  customData.push(newData);
-  
-  // 入力欄をクリア
-  newSentence.value = '';
-  
-  // 追加したデータの形式を表示
-  alert(`以下の形式で追加しました：
-  {
-    jp: "${text}",
-    en: "${translations.en}",
-    cn: "${translations.cn}",
-    kr: "${translations.kr}",
-    es: "${translations.es}"
-  }`);
+
+  customData.push(newEntry); // 画面上だけに反映（保存はしない）
+
+  alert("入力を追加しました！翻訳は後でChatGPTに依頼してください。");
+
+  document.getElementById('newSentence').value = ""; // 入力クリア
 });
 
 // スタートボタン押したらシーン開始
@@ -165,3 +151,41 @@ topButton.addEventListener('click', () => {
 function updateScore() {
   scoreDiv.textContent = `わかった数: ${correctCount}`;
 }
+// 翻訳テンプレート生成
+document.getElementById('generateTemplate').addEventListener('click', () => {
+  if (customData.length === 0) {
+    alert("customData にデータがありません。");
+    return;
+  }
+
+  const latest = customData[customData.length - 1];
+
+  const template = `この文章を以下の形式で英・中（+ピンイン）・韓（+発音）・スペイン語（+発音）に翻訳して：
+日本語: 「${latest.jp}」
+
+形式：
+{
+  jp: "${latest.jp}",
+  en: "",
+  cn: " | ",
+  kr: " | ",
+  es: " | "
+}`;
+
+  document.getElementById('templateOutput').textContent = template;
+  document.getElementById('templateSection').classList.remove('hidden');
+});
+
+// data_custom.js のダウンロード処理
+document.getElementById('downloadCustomData').addEventListener('click', () => {
+  const content = `const customData = ${JSON.stringify(customData, null, 2)};`;
+  const blob = new Blob([content], { type: 'text/javascript' });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'data_custom.js';
+  link.click();
+
+  URL.revokeObjectURL(url);
+});
