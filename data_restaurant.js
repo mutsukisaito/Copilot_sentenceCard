@@ -1,0 +1,22 @@
+const restaurantData = [
+    { jp: "メニューをください", en: "Please give me the menu", cn: "请给我菜单 | Qǐng gěi wǒ càidān", kr: "메뉴 주세요 | メニュ ジュセヨ", es: "Por favor, déme el menú | ポルファボール デメ エル メヌー" },
+    { jp: "おすすめは何ですか？", en: "What do you recommend?", cn: "你推荐什么？| Nǐ tuījiàn shénme?", kr: "추천 요리가 뭐예요? | チュチョン ヨリガ モエヨ？", es: "¿Qué recomienda? | ケ レコミエンダ？" },
+    { jp: "予約しています", en: "I have a reservation", cn: "我有预订 | Wǒ yǒu yùdìng", kr: "예약했어요 | イェヤケッソヨ", es: "Tengo una reserva | テンゴ ウナ レセルバ" },
+    { jp: "席は空いていますか？", en: "Is there a table available?", cn: "有空位吗？| Yǒu kòngwèi ma?", kr: "자리 있어요? | チャリ イッソヨ？", es: "¿Hay una mesa libre? | アイ ウナ メサ リブレ？" },
+    { jp: "これをください", en: "I'd like this, please", cn: "我要这个 | Wǒ yào zhège", kr: "이거 주세요 | イゴ ジュセヨ", es: "Quiero esto, por favor | キエロ エスト ポル ファボール" },
+    { jp: "水をください", en: "Please give me water", cn: "请给我水 | Qǐng gěi wǒ shuǐ", kr: "물 주세요 | ムル ジュセヨ", es: "Por favor, agua | ポルファボール アグア" },
+    { jp: "料理はどれくらいで来ますか？", en: "How long will the food take?", cn: "菜多久上？| Cài duōjiǔ shàng?", kr: "음식은 얼마나 걸려요? | ウムシグン オルマナ コルリョヨ？", es: "¿Cuánto tardará la comida? | クアント タルダラ ラ コミダ？" },
+    { jp: "ベジタリアンメニューはありますか？", en: "Do you have vegetarian options?", cn: "有素食菜单吗？| Yǒu sùshí càidān ma?", kr: "채식 메뉴 있어요? | チェシク メニュ イッソヨ？", es: "¿Tiene opciones vegetarianas? | ティエネ オプシオネス ベヘタリアナス？" },
+    { jp: "アレルギーがあります", en: "I have allergies", cn: "我有过敏 | Wǒ yǒu guòmǐn", kr: "알레르기가 있어요 | アレルギガ イッソヨ", es: "Tengo alergias | テンゴ アレルヒアス" },
+    { jp: "お箸をください", en: "Please give me chopsticks", cn: "请给我筷子 | Qǐng gěi wǒ kuàizi", kr: "젓가락 주세요 | チョッカラク ジュセヨ", es: "Por favor, palillos | ポルファボール パリジョス" },
+    { jp: "スプーンをください", en: "Please give me a spoon", cn: "请给我勺子 | Qǐng gěi wǒ sháozi", kr: "숟가락 주세요 | スッカラク ジュセヨ", es: "Por favor, una cuchara | ポルファボール ウナ クチャラ" },
+    { jp: "もう少し辛くしてください", en: "Please make it spicier", cn: "请做得更辣一些 | Qǐng zuò de gèng là yìxiē", kr: "조금 더 맵게 해 주세요 | チョグム ド メプケ ヘ ジュセヨ", es: "Por favor, más picante | ポルファボール マス ピカンテ" },
+    { jp: "これを抜いてください（例：玉ねぎ）", en: "Please remove this (e.g., onions)", cn: "请去掉这个（比如洋葱）| Qǐng qùdiào zhège (bǐrú yángcōng)", kr: "이걸 빼 주세요 (예: 양파) | イゴル ペ ジュセヨ (イェ: ヤンパ)", es: "Por favor, sin esto (por ejemplo, cebolla) | ポルファボール シン エスト (ポル エヘンプラ セボージャ)" },
+    { jp: "ビールをください", en: "Please give me a beer", cn: "请给我啤酒 | Qǐng gěi wǒ píjiǔ", kr: "맥주 주세요 | メクチュ ジュセヨ", es: "Por favor, una cerveza | ポルファボール ウナ セルベサ" },
+    { jp: "ワインを一杯ください", en: "One glass of wine, please", cn: "请给我一杯葡萄酒 | Qǐng gěi wǒ yì bēi pútaojiǔ", kr: "와인 한 잔 주세요 | ワイン ハンジャン ジュセヨ", es: "Una copa de vino, por favor | ウナ コパ デ ビノ ポルファボール" },
+    { jp: "デザートメニューはありますか？", en: "Do you have a dessert menu?", cn: "有甜品菜单吗？| Yǒu tiánpǐn càidān ma?", kr: "디저트 메뉴 있어요? | ディジョトゥ メニュ イッソヨ？", es: "¿Tiene menú de postres? | ティエネ メヌ デ ポストレス？" },
+    { jp: "お会計をお願いします", en: "The check, please", cn: "请结账 | Qǐng jiézhàng", kr: "계산서 주세요 | ケサンソ ジュセヨ", es: "La cuenta, por favor | ラ クエンタ ポルファボール" },
+    { jp: "別々に支払えますか？", en: "Can we pay separately?", cn: "可以分开付款吗？| Kěyǐ fēnkāi fùkuǎn ma?", kr: "각자 계산할 수 있어요? | カクチャ ケサナル ス イッソヨ？", es: "¿Podemos pagar por separado? | ポデモス パガル ポル セパラド？" },
+    { jp: "とても美味しかったです", en: "It was very delicious", cn: "非常好吃 | Fēicháng hǎochī", kr: "정말 맛있었어요 | チョンマル マシッソッソヨ", es: "Estuvo muy delicioso | エストゥーボ ムイ デリシオソ" },
+    { jp: "ごちそうさまでした", en: "Thank you for the meal", cn: "谢谢款待 | Xièxiè kuǎndài", kr: "잘 먹었습니다 | チャル モゴッスムニダ", es: "Gracias por la comida | グラシアス ポル ラ コミダ" }
+  ];  

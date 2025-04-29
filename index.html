@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常表現ビューアー</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+
+    <!-- シーン選択 -->
+<div id="sceneSelect" class="flex flex-col items-center space-y-4">
+    <h1 class="text-2xl font-bold mb-6">シーンを選んでください</h1>
+    
+    <!-- セレクトボックス -->
+    <select id="sceneSelector" class="border border-gray-300 rounded p-2">
+        <option value="" selected>選んでください</option>
+        <option value="airport">✈️ 空港</option>
+        <option value="hotel">🏨 ホテル</option>
+        <option value="restaurant">🍽 レストラン</option>
+        <option value="daily">🗣️ 日常会話</option>
+      </select>      
+  
+    <!-- スタートボタン -->
+    <button id="startButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">
+      スタート
+    </button>
+  </div>
+  
+  
+    <!-- 文例表示 -->
+    <div id="content" class="hidden bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+      <!-- 表示エリア -->
+    </div>
+  
+    <!-- ナビゲーション -->
+    <!-- ナビゲーション -->
+<div id="buttons" class="hidden mt-6 flex flex-wrap gap-4 justify-center">
+  <button id="knowButton" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+    わかった！
+  </button>
+  <button id="nextButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+    次へ
+  </button>
+  <button id="topButton" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+    トップ
+  </button>
+</div>
+
+<!-- 正解数カウンター -->
+<div id="score" class="hidden mt-4 text-center text-lg font-semibold"></div>
+  
+    <!-- スクリプト -->
+    <script src="data_airport.js"></script>
+    <script src="data_hotel.js"></script>
+    <script src="data_restaurant.js"></script>
+    <script src="data_daily.js"></script>
+    <script src="script.js"></script>
+  </body>
+  
+</html>

@@ -1,0 +1,22 @@
+const airportData = [
+    { jp: "チェックインをしたいです", en: "I want to check in", cn: "我想办理登机手续 | Wǒ xiǎng bànlǐ dēngjī shǒuxù", kr: "체크인하고 싶어요 | チェクインハゴ シポヨ", es: "Quiero hacer el check-in | キエロ アセル エル チェキン" },
+    { jp: "パスポートを見せてください", en: "Please show your passport", cn: "请出示护照 | Qǐng chūshì hùzhào", kr: "여권을 보여 주세요 | ヨクォヌル ボヨ ジュセヨ", es: "Muéstrame su pasaporte, por favor | ムエストラメ ス パサポルテ" },
+    { jp: "荷物はどこで受け取れますか？", en: "Where can I collect my luggage?", cn: "我在哪里可以取行李？| Wǒ zài nǎlǐ kěyǐ qǔ xínglǐ?", kr: "짐은 어디서 받을 수 있나요? | チムン オディソ パドゥル ス イナヨ？", es: "¿Dónde puedo recoger mi equipaje? | ドンデ プエド レコヘル ミ エキパヘ？" },
+    { jp: "搭乗ゲートはどこですか？", en: "Where is the boarding gate?", cn: "登机口在哪里？| Dēngjīkǒu zài nǎlǐ?", kr: "탑승구가 어디예요? | タプスングガ オディエヨ？", es: "¿Dónde está la puerta de embarque? | ドンデ エスタ ラ プエルタ デ エンバルケ？" },
+    { jp: "遅延していますか？", en: "Is the flight delayed?", cn: "航班延误了吗？| Hángbān yánwù le ma?", kr: "비행기가 지연되었나요? | ピヘンギガ チヨンデオッナヨ？", es: "¿El vuelo está retrasado? | エル ブエロ エスタ レトラサド？" },
+    { jp: "到着ロビーはどこですか？", en: "Where is the arrival lobby?", cn: "到达大厅在哪里？| Dàodá dàtīng zài nǎlǐ?", kr: "도착 로비는 어디예요? | トチャク ロビヌン オディエヨ？", es: "¿Dónde está el vestíbulo de llegadas? | ドンデ エスタ エル ベスティブロ デ ジェガダス？" },
+    { jp: "Wi-Fiは使えますか？", en: "Can I use Wi-Fi?", cn: "可以使用Wi-Fi吗？| Kěyǐ shǐyòng Wi-Fi ma?", kr: "Wi-Fi 사용할 수 있어요? | Wi-Fi サヨンハル ス イッソヨ？", es: "¿Puedo usar Wi-Fi? | プエド ウサル Wi-Fi？" },
+    { jp: "タクシー乗り場はどこですか？", en: "Where is the taxi stand?", cn: "出租车站在哪里？| Chūzūchē zhàn zài nǎlǐ?", kr: "택시 타는 곳은 어디예요? | テクシ タヌン ゴスン オディエヨ？", es: "¿Dónde está la parada de taxis? | ドンデ エスタ ラ パラダ デ タクシス？" },
+    { jp: "SIMカードはどこで買えますか？", en: "Where can I buy a SIM card?", cn: "哪里可以买SIM卡？| Nǎlǐ kěyǐ mǎi SIM kǎ?", kr: "SIM카드를 어디서 살 수 있나요? | SIMカドゥル オディソ サル ス イナヨ？", es: "¿Dónde puedo comprar una tarjeta SIM? | ドンデ プエド コンプラル ウナ タルヘタ SIM？" },
+    { jp: "手荷物検査はどこですか？", en: "Where is the security check?", cn: "安检在哪里？| Ānjiǎn zài nǎlǐ?", kr: "보안 검색은 어디예요? | ポアン コムセグン オディエヨ？", es: "¿Dónde está el control de seguridad? | ドンデ エスタ エル コントロル デ セグリダ？" },
+    { jp: "乗り継ぎ便は何番ゲートですか？", en: "Which gate is for my connecting flight?", cn: "转机航班是哪个登机口？| Zhuǎnjī hángbān shì nǎge dēngjīkǒu?", kr: "환승 항공편은 몇 번 게이트예요? | ファンスン ハンゴンピョヌン ミョッポン ゲイトゥエヨ？", es: "¿Qué puerta es para mi vuelo de conexión? | ケ プエルタ エス パラ ミ ブエロ デ コネクシオン？" },
+    { jp: "出発時間は何時ですか？", en: "What time does the flight depart?", cn: "航班几点出发？| Hángbān jǐ diǎn chūfā?", kr: "비행기 출발 시간이 언제예요? | ピヘンギ チュルバル シガニ オンジェエヨ？", es: "¿A qué hora sale el vuelo? | ア ケ オラ サレ エル ブエロ？" },
+    { jp: "チケットを見せてください", en: "Please show your ticket", cn: "请出示机票 | Qǐng chūshì jīpiào", kr: "티켓 보여 주세요 | ティケット ボヨ ジュセヨ", es: "Muéstrame su boleto, por favor | ムエストラメ ス ボレト" },
+    { jp: "この荷物を預けたいです", en: "I want to check this baggage", cn: "我要托运行李 | Wǒ yào tuōyùn xínglǐ", kr: "이 짐을 부치고 싶어요 | イ チムル プチゴ シポヨ", es: "Quiero facturar este equipaje | キエロ ファクトゥラル エステ エキパヘ" },
+    { jp: "入国審査はどこですか？", en: "Where is immigration?", cn: "入境检查在哪里？| Rùjìng jiǎnchá zài nǎlǐ?", kr: "입국 심사는 어디예요? | イックク シムサヌン オディエヨ？", es: "¿Dónde está inmigración? | ドンデ エスタ インミグラシオン？" },
+    { jp: "両替所はどこですか？", en: "Where is the currency exchange?", cn: "兑换处在哪里？| Duìhuàn chù zài nǎlǐ?", kr: "환전소는 어디예요? | ファンジョンソヌン オディエヨ？", es: "¿Dónde está la casa de cambio? | ドンデ エスタ ラ カサ デ カンビオ？" },
+    { jp: "遅れた場合どうすればいいですか？", en: "What should I do if I'm late?", cn: "如果迟到该怎么办？| Rúguǒ chídào gāi zěnme bàn?", kr: "늦으면 어떻게 해야 해요? | ヌジュミョン オットケ ヘヤヘヨ？", es: "¿Qué hago si llego tarde? | ケ アゴ シ ジェゴ タルデ？" },
+    { jp: "荷物が見つかりません", en: "I can't find my luggage", cn: "我找不到我的行李 | Wǒ zhǎo bù dào wǒ de xínglǐ", kr: "짐을 찾을 수 없어요 | チムル チャジュル ス オプソヨ", es: "No encuentro mi equipaje | ノ エンクエントロ ミ エキパヘ" },
+    { jp: "トランジットホテルはありますか？", en: "Is there a transit hotel?", cn: "有中转酒店吗？| Yǒu zhōngzhuǎn jiǔdiàn ma?", kr: "트랜짓 호텔이 있어요? | トゥレンジットゥ ホテリ イッソヨ？", es: "¿Hay hotel de tránsito? | アイ オテル デ トランシト？" },
+    { jp: "無料Wi-Fiはありますか？", en: "Is there free Wi-Fi?", cn: "有免费Wi-Fi吗？| Yǒu miǎnfèi Wi-Fi ma?", kr: "무료 Wi-Fi 있어요? | ムリョ Wi-Fi イッソヨ？", es: "¿Hay Wi-Fi gratuito? | アイ Wi-Fi グラトゥイート？" }
+  ];  

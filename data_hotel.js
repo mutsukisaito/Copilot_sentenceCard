@@ -1,0 +1,22 @@
+const hotelData = [
+    { jp: "予約しています", en: "I have a reservation", cn: "我有预订 | Wǒ yǒu yùdìng", kr: "예약했어요 | イェヤケッソヨ", es: "Tengo una reserva | テンゴ ウナ レセルバ" },
+    { jp: "名前で予約しています", en: "I have a reservation under my name", cn: "以我的名字预订的 | Yǐ wǒ de míngzì yùdìng de", kr: "제 이름으로 예약했어요 | チェ イルムロ イェヤケッソヨ", es: "Tengo una reserva a mi nombre | テンゴ ウナ レセルバ ア ミ ノンブレ" },
+    { jp: "チェックインをお願いします", en: "I'd like to check in", cn: "我要办理入住手续 | Wǒ yào bànlǐ rùzhù shǒuxù", kr: "체크인하고 싶어요 | チェクインハゴ シポヨ", es: "Quisiera registrarme | キシエラ レヒストラルメ" },
+    { jp: "チェックアウトは何時ですか？", en: "What time is check-out?", cn: "退房时间是几点？| Tuìfáng shíjiān shì jǐ diǎn?", kr: "체크아웃은 몇 시예요? | チェクアウトゥン ミョッシエヨ？", es: "¿A qué hora es el check-out? | ア ケ オラ エス エル チェクアウト？" },
+    { jp: "朝食はついていますか？", en: "Is breakfast included?", cn: "包含早餐吗？| Bāohán zǎocān ma?", kr: "아침 식사 포함이에요? | アチム シクサ ポハミエヨ？", es: "¿El desayuno está incluido? | エル デサユノ エスタ インクルイド？" },
+    { jp: "朝食はどこで食べられますか？", en: "Where can I have breakfast?", cn: "早餐在哪里吃？| Zǎocān zài nǎlǐ chī?", kr: "아침은 어디서 먹어요? | アチムン オディソ モゴヨ？", es: "¿Dónde se sirve el desayuno? | ドンデ セ シルベ エル デサユノ？" },
+    { jp: "Wi-Fiは無料ですか？", en: "Is Wi-Fi free?", cn: "Wi-Fi免费吗？| Wi-Fi miǎnfèi ma?", kr: "Wi-Fi 무료예요? | Wi-Fi ムリョエヨ？", es: "¿El Wi-Fi es gratuito? | エル Wi-Fi エス グラトゥイート？" },
+    { jp: "部屋を変えてもらえますか？", en: "Can I change rooms?", cn: "可以换房间吗？| Kěyǐ huàn fángjiān ma?", kr: "방을 바꿀 수 있어요? | パンウル パックル ス イッソヨ？", es: "¿Puedo cambiar de habitación? | プエド カンビアル デ アビタシオン？" },
+    { jp: "エレベーターはどこですか？", en: "Where is the elevator?", cn: "电梯在哪里？| Diàntī zài nǎlǐ?", kr: "엘리베이터는 어디예요? | エリベイトヌン オディエヨ？", es: "¿Dónde está el ascensor? | ドンデ エスタ エル アセンソール？" },
+    { jp: "冷蔵庫は使えますか？", en: "Can I use the refrigerator?", cn: "可以使用冰箱吗？| Kěyǐ shǐyòng bīngxiāng ma?", kr: "냉장고 사용 가능해요? | ネンジャング サヨン カヌンヘヨ？", es: "¿Puedo usar el refrigerador? | プエド ウサル エル レフリヘラドール？" },
+    { jp: "トイレの水が流れません", en: "The toilet doesn't flush", cn: "厕所冲水不了 | Cèsuǒ chōngshuǐ bùliǎo", kr: "화장실 물이 안 내려가요 | ファジャンシル ムリ アン ネリョガヨ", es: "El inodoro no descarga | エル イノドロ ノ デスカルガ" },
+    { jp: "タオルを追加でください", en: "Please give me more towels", cn: "请给我更多毛巾 | Qǐng gěi wǒ gèng duō máojīn", kr: "수건 더 주세요 | スゴン ト ジュセヨ", es: "Por favor, más toallas | ポル ファボール マス トアジャス" },
+    { jp: "シャワーが壊れています", en: "The shower is broken", cn: "淋浴坏了 | Línyù huài le", kr: "샤워기가 고장났어요 | シャウォギガ コジャンナッソヨ", es: "La ducha está rota | ラ ドゥチャ エスタ ロタ" },
+    { jp: "ドライヤーを借りられますか？", en: "Can I borrow a hairdryer?", cn: "可以借吹风机吗？| Kěyǐ jiè chuīfēngjī ma?", kr: "헤어드라이어 빌릴 수 있어요? | ヘオドゥライオ ピルリル ス イッソヨ？", es: "¿Puedo pedir un secador de pelo? | プエド ペディル ウン セカドール デ ペロ？" },
+    { jp: "ルームサービスをお願いします", en: "I'd like to order room service", cn: "我想叫客房服务 | Wǒ xiǎng jiào kèfáng fúwù", kr: "룸서비스 주문하고 싶어요 | ルムサービス チュムナゴ シポヨ", es: "Quisiera pedir servicio de habitación | キシエラ ペディル セルビシオ デ アビタシオン" },
+    { jp: "追加料金はありますか？", en: "Is there any extra charge?", cn: "有额外费用吗？| Yǒu éwài fèiyòng ma?", kr: "추가 요금 있나요? | チュガ ヨグム インナヨ？", es: "¿Hay cargo adicional? | アイ カルゴ アディシオナル？" },
+    { jp: "部屋を掃除してください", en: "Please clean the room", cn: "请打扫房间 | Qǐng dǎsǎo fángjiān", kr: "방 청소 부탁해요 | パン チョンソ プタケヨ", es: "Por favor, limpie la habitación | ポル ファボール リンピエ ラ アビタシオン" },
+    { jp: "空港まで送迎はありますか？", en: "Is there an airport shuttle?", cn: "有机场接送服务吗？| Yǒu jīchǎng jiēsòng fúwù ma?", kr: "공항 셔틀 있어요? | コンハン ショトゥル イッソヨ？", es: "¿Hay traslado al aeropuerto? | アイ トラスラド アル アエロプエルト？" },
+    { jp: "レイトチェックアウトできますか？", en: "Can I have a late check-out?", cn: "可以晚退房吗？| Kěyǐ wǎn tuìfáng ma?", kr: "늦게 체크아웃할 수 있어요? | ヌッケ チェクアウトゥ ハル ス イッソヨ？", es: "¿Puedo hacer un check-out tardío? | プエド アセル ウン チェクアウトゥ タルディオ？" },
+    { jp: "とても快適でした", en: "It was very comfortable", cn: "非常舒适 | Fēicháng shūshì", kr: "아주 편안했어요 | アジュ ピョナネッソヨ", es: "Fue muy cómodo | フエ ムイ コモド" }
+  ];  
