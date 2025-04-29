@@ -31,7 +31,6 @@ document.getElementById('submitButton').addEventListener('click', () => {
   const jp = document.getElementById('newSentence').value.trim();
   if (!jp) return alert("日本語を入力してください");
 
-  // 仮のテンプレート（翻訳は後でChatGPTに頼む）
   const newEntry = {
     jp: jp,
     en: "",
@@ -40,11 +39,26 @@ document.getElementById('submitButton').addEventListener('click', () => {
     es: " | "
   };
 
-  customData.push(newEntry); // 画面上だけに反映（保存はしない）
+  customData.push(newEntry);
 
-  alert("入力を追加しました！翻訳は後でChatGPTに依頼してください。");
+  // ChatGPT翻訳テンプレートを自動生成して表示
+  const template = `この文章を以下の形式で英・中（+ピンイン）・韓（+発音）・スペイン語（+発音）に翻訳して：
+日本語: 「${jp}」
 
-  document.getElementById('newSentence').value = ""; // 入力クリア
+形式：
+{
+  jp: "${jp}",
+  en: "",
+  cn: " | ",
+  kr: " | ",
+  es: " | "
+}`;
+  document.getElementById('templateOutput').textContent = template;
+  document.getElementById('templateSection').classList.remove('hidden');
+
+  alert("入力を追加しました！翻訳テンプレートを下に表示しました。");
+
+  document.getElementById('newSentence').value = "";
 });
 
 // スタートボタン押したらシーン開始
