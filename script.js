@@ -37,10 +37,16 @@ submitButton.addEventListener('click', () => {
   
   // 入力欄をクリア
   newSentence.value = '';
-
-  // 入力欄をクリア
-  newSentence.value = '';
-  alert('文章を追加しました');
+  
+  // 追加したデータの形式を表示
+  alert(`以下の形式で追加しました：
+  {
+    jp: "${text}",
+    en: "",
+    cn: "|",
+    kr: "|",
+    es: "|"
+  }`);
 });
 
 // スタートボタン押したらシーン開始
