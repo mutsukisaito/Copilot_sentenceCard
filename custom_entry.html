@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
   <!-- 文章追加エリア -->
-  <div class="mt-8">
+  <div class="w-full max-w-md">
     <h2 class="text-xl font-bold mb-4">文章を追加する</h2>
     <textarea id="newSentence" class="w-full border border-gray-300 rounded p-2 mb-4" rows="3" placeholder="日本語の文章を入力してください"></textarea>
     <button id="submitButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">
@@ -29,5 +29,8 @@
       </button>
     </div>
   </div>
+
+  <!-- トップへ戻るリンク -->
+  <a href="index.html" class="mt-8 text-blue-500 underline text-sm">トップへ戻る</a>
 </body>
 </html>
