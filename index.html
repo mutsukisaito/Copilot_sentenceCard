@@ -28,27 +28,35 @@
   </div>
   
   
-    <!-- 文例表示 -->
-    <div id="content" class="hidden bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
-      <!-- 表示エリア -->
-    </div>
-  
-    <!-- ナビゲーション -->
-    <!-- ナビゲーション -->
-<div id="buttons" class="hidden mt-6 flex flex-wrap gap-4 justify-center">
-  <button id="knowButton" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-    わかった！
-  </button>
-  <button id="nextButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-    次へ
-  </button>
-  <button id="topButton" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
-    トップ
-  </button>
+<!-- コンテンツ表示 -->
+<div id="content" class="hidden bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+  <!-- 文例がここに出る -->
 </div>
 
-<!-- 正解数カウンター -->
-<div id="score" class="hidden mt-4 text-center text-lg font-semibold"></div>
+<!-- ボタンエリア -->
+<div id="buttonArea" class="hidden mt-6 flex flex-col items-center space-y-4">
+
+  <!-- わかったボタン＋スコア -->
+  <div class="flex items-center gap-4">
+    <button id="knowButton" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+      わかった！
+    </button>
+    <div id="score" class="text-lg font-semibold">
+      わかった数: 0
+    </div>
+  </div>
+
+  <!-- 次へ＋トップボタン -->
+  <div class="flex gap-4 mt-4">
+    <button id="nextButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+      次へ
+    </button>
+    <button id="topButton" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+      トップ
+    </button>
+  </div>
+
+</div>
   
     <!-- スクリプト -->
     <script src="data_airport.js"></script>

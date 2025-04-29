@@ -5,10 +5,10 @@ let correctCount = 0; // ← わかった数カウント
 
 const sceneSelectDiv = document.getElementById('sceneSelect');
 const contentDiv = document.getElementById('content');
+const buttonArea = document.getElementById('buttonArea');
+const knowButton = document.getElementById('knowButton');
 const nextButton = document.getElementById('nextButton');
 const topButton = document.getElementById('topButton');
-const knowButton = document.getElementById('knowButton'); // 追加
-const buttonsDiv = document.getElementById('buttons');
 const sceneSelector = document.getElementById('sceneSelector');
 const startButton = document.getElementById('startButton');
 const scoreDiv = document.getElementById('score'); // スコア表示用
@@ -42,8 +42,8 @@ function startScene(scene) {
   updateScore();
   sceneSelectDiv.classList.add('hidden');
   contentDiv.classList.remove('hidden');
-  buttonsDiv.classList.remove('hidden');
-  scoreDiv.classList.remove('hidden');
+  buttonArea.classList.remove('hidden');
+  updateScore();
   renderRandomContent();
 }
 
@@ -85,29 +85,32 @@ function renderRandomContent() {
   `;
 }
 
-function updateScore() {
-  scoreDiv.textContent = `わかった数: ${correctCount}`;
-}
-
-nextButton.addEventListener('click', () => {
-  renderRandomContent();
-});
-
+// わかったボタン
 knowButton.addEventListener('click', () => {
   correctCount++;
   updateScore();
   renderRandomContent();
 });
 
+// 次へボタン
+nextButton.addEventListener('click', () => {
+  renderRandomContent();
+});
+
+// トップボタン
 topButton.addEventListener('click', () => {
   currentData = [];
   currentSceneTitle = "";
   lastIndex = -1;
   correctCount = 0;
   contentDiv.classList.add('hidden');
-  buttonsDiv.classList.add('hidden');
-  scoreDiv.classList.add('hidden');
+  buttonArea.classList.add('hidden');
   sceneSelectDiv.classList.remove('hidden');
   sceneSelector.value = "";
   contentDiv.innerHTML = '';
 });
+
+// スコア更新
+function updateScore() {
+  scoreDiv.textContent = `わかった数: ${correctCount}`;
+}
