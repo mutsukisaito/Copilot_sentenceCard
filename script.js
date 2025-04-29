@@ -12,8 +12,6 @@ const topButton = document.getElementById('topButton');
 const sceneSelector = document.getElementById('sceneSelector');
 const startButton = document.getElementById('startButton');
 const scoreDiv = document.getElementById('score'); // スコア表示用
-const newSentence = document.getElementById('newSentence');
-const submitButton = document.getElementById('submitButton');
 
 // 簡易翻訳関数（実際のプロジェクトでは外部APIを使用することを推奨）
 function translate(text) {
